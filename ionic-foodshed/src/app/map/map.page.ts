@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-})export class HomePage {
+  selector: 'app-map',
+  templateUrl: './map.page.html',
+  styleUrls: ['./map.page.scss'],
+})
+export class MapPage implements OnInit {
   markers: any[];
   map: any;
   constructor() {
@@ -25,6 +26,7 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
       maxZoom: 17,
       container: 'map'
     });
+  }
 
-}
+  ngOnInit() {}
 }
