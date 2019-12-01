@@ -6,10 +6,17 @@ const routes: Routes = [
   { path: '', redirectTo: 'map', pathMatch: 'full' },
   { path: 'map', loadChildren: './map/map.module#MapPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'fridges', loadChildren: './fridges/fridges.module#FridgesPageModule' },
+  // Temp fix to redirect
   { path: 'map/map', redirectTo: 'map', pathMatch: 'full' },
-  { path: 'map/about', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about/map', redirectTo: 'map', pathMatch: 'full' },
+  { path: 'fridges/map', redirectTo: 'map', pathMatch: 'full' },
+  { path: 'map/about', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about/about', redirectTo: 'about', pathMatch: 'full' },
+  { path: 'fridges/about', redirectTo: 'about', pathMatch: 'full' },
+  { path: 'map/fridges', redirectTo: 'fridges', pathMatch: 'full' },
+  { path: 'about/fridges', redirectTo: 'fridges', pathMatch: 'full' },
+  { path: 'fridges/fridges', redirectTo: 'fridges', pathMatch: 'full' },
 ];
 
 // const routes: Routes = [
