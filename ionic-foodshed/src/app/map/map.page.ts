@@ -26,7 +26,13 @@ export class MapPage implements OnInit {
       maxZoom: 17,
       container: 'map'
     });
+    // add a single marker
+    const marker = new mapboxgl.Marker()
+      .setLngLat([-89.4125, 43.0766])
+      .addTo(this.map);
+
+
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
