@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
@@ -10,6 +11,9 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 export class MapPage implements OnInit {
   markers: any[];
   map: any;
+  constructor() {
+    this.markers = []; // TODO: initialize array of markers
+  }
   ionViewDidEnter() { // run when app is opened
     /*Initializing Map*/
     // tslint:disable-next-line: max-line-length
@@ -23,10 +27,11 @@ export class MapPage implements OnInit {
       maxZoom: 17,
       container: 'map'
     });
-    // add a single marker, cannot change parameters to color; Zooming breaks it.
-    const marker = new mapboxgl.Marker()
+    // add a single marker
+    var marker = new mapboxgl.Marker()
       .setLngLat([-89.4125, 43.0766])
       .addTo(this.map);
+      
 
 
   }
