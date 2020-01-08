@@ -1,0 +1,59 @@
+<ion-content padding center text-center>
+  <ion-title>For FoodShed Members:</ion-title>
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input formControlName="username" placeholder="Username"></ion-input>
+    </ion-item>
+
+    <div class="error-messages">
+      <ng-container *ngFor = "let error of error_messages.username">
+        <div class="error-message" *ngIf="loginForm.get('username').hasError(error.type) && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+          {{ error.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input formControlName="password" placeholder="Password" type="password"></ion-input>
+    </ion-item>
+
+    <div class="error-messages">
+        <ng-container *ngFor = "let error of error_messages.password">
+          <div class="error-message" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    <ion-button [disabled]="!loginForm.valid" (click)="login()" expand="round">Log In</ion-button>
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="map">
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="about">
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="fridges">
+          <ion-icon name="thermometer"></ion-icon>
+          <ion-label>Fridges</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button tab="login">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Login</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
