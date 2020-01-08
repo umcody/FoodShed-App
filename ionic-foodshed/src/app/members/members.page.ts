@@ -21,7 +21,7 @@ export class MembersPage implements OnInit {
   fridge3:string="assets/fridge_images/fridge3.jpg";
   fridge4:string="assets/fridge_images/fridge4.jpg";
 
-  //status1:string="Empty";
+  status1:string="Empty";
   status2:string="Full";
   status3:string="Full";
   status4:string="Empty";
@@ -200,7 +200,7 @@ export class MembersPage implements OnInit {
 
   changeStatus(newStatus:string) {
     if (this.fridge_num == 1) {
-      //this.status1 = newStatus;
+      this.status1 = newStatus;
     }
     else if (this.fridge_num == 2) {
       this.status2 = newStatus;
