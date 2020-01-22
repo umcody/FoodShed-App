@@ -28,12 +28,9 @@ export class MapPage implements OnInit {
       container: 'map'
     });
     // add a single marker
-    var marker = new mapboxgl.Marker()
+    let marker = new mapboxgl.Marker()
       .setLngLat([-89.4125, 43.0766])
       .addTo(this.map);
-      
-
-
   }
 
   ngOnInit() { }
